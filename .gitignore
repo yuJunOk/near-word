@@ -1,0 +1,36 @@
+# Gradle
+.gradle/
+build/
+*/build/
+gradle-app.setting
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Keystore & 签名
+*.jks
+*.keystore
+
+# Log / Crash
+*.log
+captures/
+
+# 其他
+.externalNativeBuild
+.cxx
+*.apk
+*.aab
