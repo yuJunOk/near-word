@@ -108,3 +108,40 @@ com.xxx.nearword
 implementation(libs.androidx.lifecycle.viewmodel.compose)
 ```
 
+### 6. Git提交规范（Conventional Commits）
+
+格式为 `<type>(<scope>): <subject>`
+
+| type       | 含义               |
+| ---------- | ------------------ |
+| `feat`     | 新功能             |
+| `fix`      | 修复 bug           |
+| `docs`     | 文档               |
+| `style`    | 格式变动（无逻辑） |
+| `refactor` | 重构               |
+| `perf`     | 性能优化           |
+| `test`     | 测试               |
+| `chore`    | 构建/依赖          |
+| `ci`       | CI/CD              |
+
+**scope 和 subject 规则（一句话记）**
+
+| 字段        | 写法                                      | 示例                      |
+| ----------- | ----------------------------------------- | ------------------------- |
+| **scope**   | 可选；用“模块/功能”小写即可               | `home` `nav` `api`        |
+| **subject** | 50 字内，**英文小写祈使句**，**不加句号** | `add search history list` |
+
+**示例**
+
+```
+feat(home): add search history list
+fix(login): resolve crash on empty password
+docs: update README
+chore(deps): bump compose-bom to 2024.09.00
+```
+
+**首次提交**
+
+```
+Initial commit
+```
