@@ -1,10 +1,10 @@
+[TOC]
+
 # NearWord 规范说明
 
 > 版本：v1.0
 > 适用范围：Kotlin + Jetpack Compose 单模块或多模块项目
 > 目标：让任何新成员 5 分钟内即可定位任何文件
-
-[TOC]
 
 ## 🛠️ 技術棧
 
