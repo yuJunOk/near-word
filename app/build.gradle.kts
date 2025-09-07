@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -56,5 +57,18 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // View Model
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+    // Room 运行时与协程扩展
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    // 可选：显式声明 SQLite 版本（Room 内部已带，可省略）
+    implementation(libs.sqlite)
+    // KSP 注解处理器——替 kapt，生成 Room 的 _Impl 类
+    ksp(libs.room.runtime)
+    ksp(libs.room.compiler)
+    // 测试
+    testImplementation(libs.androidx.test.core)
+    testImplementation(libs.kotlinx.coroutines.test)
 }

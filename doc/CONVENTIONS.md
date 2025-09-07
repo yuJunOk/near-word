@@ -6,7 +6,7 @@
 > 适用范围：Kotlin + Jetpack Compose 单模块或多模块项目
 > 目标：让任何新成员 5 分钟内即可定位任何文件
 
-## 🛠️ 技術棧
+## 🛠️ 技术栈
 
 | 层级     | 选型                     | 备注                          |
 | -------- | ------------------------ | ----------------------------- |
@@ -21,7 +21,8 @@
 
 ### 工具库
 
-* ViewModel：状态仓库... [引入ViewModel记录](./DEVLOG.md#引入ViewModel)
+* ViewModel：状态仓库... [引入ViewModel记录](./DEVLOG.md#一、引入ViewModel)
+* Room：本地数据库，类型安全的 SQLite 封装，支持协程/Flow [引入Room记录](./DEVLOG.md#四、引入-room-sqlite-ksp)
 
 ## 🏗️ 项目结构（单模块示例）
 
@@ -44,8 +45,19 @@ app/src/main/java/com/xxx/nearword/
 │   └── profile/
 │       ├── ProfileScreen.kt
 │       └── ProfileViewModel.kt
-├── data/                           // Repository & DataSource
+├── data                            // Repository & DataSource
+│  ├─ db							// 数据库定义: Room数据库定义(AppDatabase)、数据访问对象（Dao）、数据实体（Entity）
+│  │  ├─ AppDatabase.kt				// Room数据库定义
+│  │  ├─ WordDao.kt
+│  │  └─ entity/					// 数据实体类
+│  │     └─ WordEntity.kt
+│  └─ repo/							// 数据访问层
+│     └─ WordRepository.kt
 ├── domain/                         // UseCase & 纯业务
+│  ├─ model
+│  │  └─ Word.kt
+│  └─ usecase
+│     └─ QueryWordUseCase.kt
 ├── di/                             // Hilt Module
 └── util/                           // 工具 & 扩展
 ```
